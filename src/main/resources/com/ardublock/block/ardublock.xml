@@ -2235,6 +2235,73 @@
 
 		<!-- ******************** Communication *************** -->
 
+		<BlockGenus name="keyboard_press" kind="command" color="209 222 63" initlabel="bg.keyboard_press">
+			<BlockConnectors>
+				<BlockConnector connector-type="poly" connector-kind="socket" label="char">
+					<DefaultArg genus-name="char" label="a" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
+		<BlockGenus name="keyboard_release" kind="command" color="209 222 63" initlabel="bg.keyboard_release">
+			<BlockConnectors>
+				<BlockConnector connector-type="poly" connector-kind="socket" label="char">
+					<DefaultArg genus-name="char" label="a" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
+		<BlockGenus name="keyboard_release_all" kind="command" color="209 222 63" initlabel="bg.keyboard_release_all">
+		</BlockGenus>
+
+		<BlockGenus name="mouse_move" kind="command" color="209 222 63" initlabel="bg.mouse_move">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="x">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="y">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="wheel">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
+		<BlockGenus name="mouse_click" kind="command" color="209 222 63" initlabel="bg.mouse_click">
+			<description>
+				<text>Mouse button click. 0: Left, 1: Right, 2: Middle button</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="button">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
+		<BlockGenus name="mouse_press" kind="command" color="209 222 63" initlabel="bg.mouse_press">
+			<description>
+				<text>Mouse button press. 0: Left, 1: Right, 2: Middle button</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="button">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
+		<BlockGenus name="mouse_release" kind="command" color="209 222 63" initlabel="bg.mouse_release">
+			<description>
+				<text>Mouse button release. 0: Left, 1: Right, 2: Middle button</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="button">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
+
 		<BlockGenus name="serial_read" kind="data" color="245 245 245"
 			initlabel="bg.serial_read">
 			<BlockConnectors>
@@ -4880,7 +4947,7 @@
 			</Images>
 		</BlockGenus>
 
-		<BlockGenus name="seeed_ir_dist_int" kind="data" color="1 255 0"
+		<BlockGenus name="seeed_ir_dist_int" kind="data" color="13 177 75"
 			initlabel="bg.seeed_ir_dist_int">
 			<description>
 				<text>Read digital from the pin</text>
@@ -5284,6 +5351,57 @@
 			</Images>
 		</BlockGenus>
 
+		<BlockGenus name="seeed_3x_accel_1_5x" kind="command" color="13 177 75" initlabel="bg.seeed_3x_accel_1_5x">
+			<description>
+				<text>3-Axis Accel 1.5g</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="AccelX">
+					<DefaultArg genus-name="variable_number" label="integer variable name" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="AccelY">
+					<DefaultArg genus-name="variable_number" label="integer variable name" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="AccelZ">
+					<DefaultArg genus-name="variable_number" label="integer variable name" />
+				</BlockConnector>
+			</BlockConnectors>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/seeedstudio/accel3x.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+
+		<BlockGenus name="seeed_I2C_Touch_Update" kind="command" color="13 177 75" initlabel="bg.seeed_I2C_Touch_Update">
+			<description>
+				<text>I2C Touch Sensor State Update</text>
+			</description>
+			<BlockConnectors>
+			</BlockConnectors>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/seeedstudio/I2C_Touch_Sensor.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+
+		<BlockGenus name="seeed_I2C_Touch_State" kind="data" color="13 177 75" initlabel="bg.seeed_I2C_Touch_State">
+			<description>
+				<text>I2C Touch Sensor up to 12 pads</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug" />
+				<BlockConnector connector-type="number" connector-kind="socket" label="CH">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+			</BlockConnectors>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/seeedstudio/I2C_Touch_Sensor.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
 
 		<BlockGenus name="seeed_LCD_I2C_Print" kind="command"
 			color="13 177 75" initlabel="bg.seeed_LCD_I2C_Print">
@@ -10975,6 +11093,16 @@
 				<BlockGenusMember>number-single-I2C-address</BlockGenusMember>
 				<BlockGenusMember>number-single-fixed-parallel</BlockGenusMember>
 			</BlockDrawer>
+			<BlockDrawer button-color="209 222 63" name="bd.hid"
+				type="factory">
+				<BlockGenusMember>keyboard_press</BlockGenusMember>
+				<BlockGenusMember>keyboard_release</BlockGenusMember>
+				<BlockGenusMember>keyboard_release_all</BlockGenusMember>
+				<BlockGenusMember>mouse_move</BlockGenusMember>
+				<BlockGenusMember>mouse_click</BlockGenusMember>
+				<BlockGenusMember>mouse_press</BlockGenusMember>
+				<BlockGenusMember>mouse_release</BlockGenusMember>
+			</BlockDrawer>
 			<BlockDrawer button-color="255 255 255" name="bd.communication"
 				type="factory">
 				<BlockGenusMember>serial_read</BlockGenusMember>
@@ -11155,7 +11283,11 @@
 				<BlockGenusMember>seeed_LCD_I2C_MoveCursor</BlockGenusMember>
 				<BlockGenusMember>seeed_LCD_I2C_Color</BlockGenusMember>
 				<BlockGenusMember>seeed_LCD_I2C_Clear</BlockGenusMember>
+				<BlockGenusMember>seeed_3x_accel_1_5x</BlockGenusMember>
+				<BlockGenusMember>seeed_I2C_Touch_Update</BlockGenusMember>
+				<BlockGenusMember>seeed_I2C_Touch_State</BlockGenusMember>
 			</BlockDrawer>
+			<!-- 
 			<BlockDrawer button-color="20 206 20" name="bd.DuinoEDU">
 				<BlockGenusMember>DuinoEDU_Led</BlockGenusMember>
 				<BlockGenusMember>DuinoEDU_infrared</BlockGenusMember>
@@ -11205,6 +11337,7 @@
 				<BlockGenusMember>DuinoEDU_MP3_Player</BlockGenusMember>
 				<BlockGenusMember>DuinoEDU_MP3_Pause</BlockGenusMember>
 			</BlockDrawer>
+			 -->
 			<!-- 
 			<BlockDrawer button-color="216 5 10" name="bd.adafruit"
 				type="factory">
