@@ -10,6 +10,8 @@ public class KeyboardReleaseBlock extends TranslatorBlock
 	public KeyboardReleaseBlock(Long blockId, Translator translator, String codePrefix, String codeSuffix, String label)
 	{
 		super(blockId, translator, codePrefix, codeSuffix, label);
+		translator.addHeaderFile("Keyboard.h");
+
 	}
 
 	@Override

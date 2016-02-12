@@ -11072,6 +11072,7 @@
 				<BlockGenusMember>variable_number_double</BlockGenusMember>
 				<BlockGenusMember>number_double</BlockGenusMember>
 				<BlockGenusMember>setter_variable_char</BlockGenusMember>
+				<BlockGenusMember>variable_poly</BlockGenusMember>
 				<BlockGenusMember>char</BlockGenusMember>
 				<BlockGenusMember>variable_string</BlockGenusMember>
 				<BlockGenusMember>setter_variable_String</BlockGenusMember>
@@ -11080,18 +11081,18 @@
 				<BlockGenusMember>create_variable_vector</BlockGenusMember>
 				<BlockGenusMember>variable_vector</BlockGenusMember>
 				<BlockGenusMember>setter_variable_vector</BlockGenusMember>
-				<BlockGenusMember>setter_variable_char</BlockGenusMember>
-				<BlockGenusMember>variable_poly</BlockGenusMember>
 			</BlockDrawer>
 			<BlockDrawer button-color="205 133 63" name="bd.utilities"
 				type="factory">
 				<BlockGenusMember>servo_default</BlockGenusMember>
 				<BlockGenusMember>ultrasonic</BlockGenusMember>
+				<!-- 
 				<BlockGenusMember>LCD_I2C_Sainsmart_20by4</BlockGenusMember>
 				<BlockGenusMember>LCD_command_lightOff</BlockGenusMember>
 				<BlockGenusMember>LCD_PLL_Sainsmart_16by2</BlockGenusMember>
 				<BlockGenusMember>number-single-I2C-address</BlockGenusMember>
 				<BlockGenusMember>number-single-fixed-parallel</BlockGenusMember>
+				 -->
 			</BlockDrawer>
 			<BlockDrawer button-color="209 222 63" name="bd.hid"
 				type="factory">

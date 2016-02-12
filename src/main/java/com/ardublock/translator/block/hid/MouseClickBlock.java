@@ -10,6 +10,7 @@ public class MouseClickBlock extends TranslatorBlock
 	public MouseClickBlock(Long blockId, Translator translator, String codePrefix, String codeSuffix, String label)
 	{
 		super(blockId, translator, codePrefix, codeSuffix, label);
+		translator.addHeaderFile("Mouse.h");
 	}
 
 	@Override
